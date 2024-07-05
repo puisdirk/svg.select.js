@@ -1,6 +1,8 @@
-import { Element, Line, Polygon, Polyline, extend } from '@svgdotjs/svg.js'
+import { Element, Line, Polygon, Polyline, Path, extend } from '@svgdotjs/svg.js'
 import { SelectHandler } from './SelectHandler'
 import { PointSelectHandler } from './PointSelectHandler'
+import { PathSelectHandler } from './PathSelectHandler'
+import { PathManipulator } from './PathManipulator'
 
 const getSelectFn = (handleClass) => {
   return function (enabled = true, options = {}) {
@@ -36,4 +38,9 @@ extend([Polygon, Polyline, Line], {
   pointSelect: getSelectFn(PointSelectHandler),
 })
 
-export { SelectHandler, PointSelectHandler }
+extend(Path, {
+  pointSelect: getSelectFn(PathSelectHandler),
+  manipulate: getSelectFn(PathManipulator),
+})
+
+export { SelectHandler, PointSelectHandler, PathSelectHandler }
