@@ -60,3 +60,44 @@
   cursor: move;
   fill: white;
 }
+
+.svg_pathselect_control_point {
+  stroke: steelblue;
+  stroke-width: 1;
+  fill: white;
+}
+
+.svg_pathselect_control_point:hover {
+  fill: orange;
+}
+
+.svg_pathselect_control_handle {
+  stroke: steelblue;
+  stroke-width: 1;
+  fill: white;
+}
+
+.svg_pathselect_control_handle:hover {
+  fill: orange;
+}
+
+.svg_pathselect_control_handle.reflected {
+  stroke: #ccc;
+}
+
+.svg_pathselect_arc_helperpath {
+  stroke: #ccc;
+  stroke-width: 0.5;
+}
+
+.svg_pathselect_control_stalk {
+  stroke: steelblue;
+  stroke-width: 1;
+  stroke-dasharray: 4 2;
+  fill: none;
+}
+
+.svg_pathselect_control_stalk.reflected {
+  stroke: #ccc;
+  stroke-width: 0.5;
+}
