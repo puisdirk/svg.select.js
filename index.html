@@ -9,6 +9,7 @@
     <button onclick="deactivate()">Deactivate</button>
     <button onclick="activate()">Activate</button>
     <button onclick="manipulate()">Manipulate</button>
+    <span id="currentmode"></span>
     <script type="module" src="src/main.js"></script>
     <script type="module">
       import { SVG } from '@svgdotjs/svg.js'
@@ -43,18 +44,21 @@
 
       window.deactivate = () => {
         paths.forEach(path => path.pointSelect(false))
+        document.getElementById('currentmode').innerText = 'inactive'
       }
 
       window.activate = () => {
         paths.forEach(path => path.manipulate(false))
         paths.forEach(path => path.pointSelect(false))
         paths.forEach(path => path.pointSelect())
+        document.getElementById('currentmode').innerText = 'active'
       }
 
       window.manipulate = () => {
         paths.forEach(path => path.manipulate(false))
         paths.forEach(path => path.pointSelect(false))
         paths.forEach(path => path.pointSelect().manipulate())
+        document.getElementById('currentmode').innerText = 'manipulating'
       }
 
       let pathsStroke = {color: '#666', width: 2};
