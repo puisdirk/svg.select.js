@@ -54,9 +54,9 @@ export class PathSelectHandler {
   active(val, options) {
     // Disable selection
     if (!val) {
-      this.selection.clear().remove()
-      this.observer.disconnect()
-      return
+        this.selection && this.selection.clear().remove()
+        this.selection && this.observer.disconnect()
+        return
     }
 
     // Enable selection

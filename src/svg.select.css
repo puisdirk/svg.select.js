@@ -67,10 +67,18 @@
   fill: white;
 }
 
+.svg_pathselect_control_point:hover {
+  fill: orange;
+}
+
 .svg_pathselect_control_handle {
   stroke: steelblue;
   stroke-width: 1;
   fill: white;
+}
+
+.svg_pathselect_control_handle:hover {
+  fill: orange;
 }
 
 .svg_pathselect_control_handle.reflected {

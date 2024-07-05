@@ -88,6 +88,7 @@ export class PathManipulator {
             segmentIndex = event.detail.event.currentTarget.getAttribute('segmentindex');
             controlpointType = event.detail.event.currentTarget.getAttribute('cpid');
         }
+
         controlpointType = controlpointType.substr(controlpointType.indexOf('type-') + 'type-'.length);
 
         this.parameters = {
@@ -257,7 +258,7 @@ export class PathManipulator {
         }
 
         this.el.fire('pathmanipulationstart', {dx: this.parameters.x, dy: this.parameters.y, event: event});
-        // When resizing started, we have to register events for...
+        // When manipulation starts, we have to register events for...
         // Touches.
         this.el.root().on('touchmove.pathmanipulator', _this.update);
         this.el.root().on('touchend.pathmanipulator', _this.done);
